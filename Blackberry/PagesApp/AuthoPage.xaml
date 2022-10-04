@@ -21,13 +21,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBlock/>
-            <TextBox/>
-            <TextBlock/>
-            <PasswordBox/>
+            <TextBlock Text="Login"/>
+            <TextBox x:Name="TxtLogin"/>
+            <TextBlock Text="Password"/>
+            <PasswordBox x:Name="TxtPassword"/>
             <StackPanel Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button Content="Log in" Margin="5"/>
-                <Button Content="Registration" Margin="5"/>
+                <Button Click="LoginButton_Click" Content="Log in" Margin="5"/>
+                <Button Click="RegistationButton_Click" Content="Registration" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>
