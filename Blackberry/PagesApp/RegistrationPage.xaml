@@ -7,8 +7,30 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegistrationPage">
-
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Name"></TextBlock>
+            <TextBox x:Name="TxtName"></TextBox>
+            <TextBlock Text="Login"></TextBlock>
+            <TextBox x:Name="TxtLogin"></TextBox>
+            <TextBlock Text="Password"></TextBlock>
+            <TextBox x:Name="TxtPassword"></TextBox>
+            <StackPanel Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Content="Reverse" Click="ReverseButton_Click" Margin="5"></Button>
+                <Button Content="Registration" Click="RegistrationButton_Click"  Margin="5"></Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

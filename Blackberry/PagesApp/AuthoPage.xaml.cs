@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blackberry.ClassApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,21 @@ namespace Blackberry.PagesApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            if((TxtLogin.Text != "")&&(TxtPassword.Password != ""))
+            {
+                var DataLogin = DbConnection.Connection.Autorization.Where(z => z.Login == TxtLogin.Text && z.Password == TxtPassword.Password).FirstOrDefault();
+                if(DataLogin != null)
+                {
+                    MessageBox.Show(DataLogin.User.Nickname);
+                }
+            }
+        }
 
+        private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationPage());
         }
     }
 }

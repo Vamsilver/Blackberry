@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Blackberry.PagesApp;
 
 namespace Blackberry
 {
@@ -23,6 +24,7 @@ namespace Blackberry
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.NavigationService.Navigate(new AuthoPage());
         }
     }
 }

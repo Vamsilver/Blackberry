@@ -27,7 +27,7 @@
             <PasswordBox x:Name="TxtPassword"/>
             <StackPanel Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
                 <Button Click="LoginButton_Click" Content="Log in" Margin="5"/>
-                <Button Click="RegistationButton_Click" Content="Registration" Margin="5"/>
+                <Button Click="RegistrationButton_Click" Content="Registration" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>
