@@ -28,19 +28,45 @@ namespace Blackberry.PagesApp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if((TxtLogin.Text != "")&&(TxtPassword.Password != ""))
+            EventLogin();
+        }
+
+        public void EventLogin()
+        {
+            try
             {
-                var DataLogin = DbConnection.Connection.Autorization.Where(z => z.Login == TxtLogin.Text && z.Password == TxtPassword.Password).FirstOrDefault();
-                if(DataLogin != null)
+                if ((TxtLogin.Text != "") && (TxtPassword.Password != ""))
                 {
-                    MessageBox.Show(DataLogin.User.Nickname);
+                    var DataLogin = DbConnection.Connection.Autorization.Where(z => z.Login == TxtLogin.Text && z.Password == TxtPassword.Password).FirstOrDefault();
+                    if (DataLogin != null)
+                    {
+                        MessageBox.Show(DataLogin.User.Nickname);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Заполните поля!");
+                }
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegistrationPage());
+        }
+
+        private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+                EventLogin();
         }
     }
 }

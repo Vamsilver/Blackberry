@@ -24,7 +24,7 @@
             <TextBlock Text="Login"/>
             <TextBox x:Name="TxtLogin"/>
             <TextBlock Text="Password"/>
-            <PasswordBox x:Name="TxtPassword"/>
+            <PasswordBox x:Name="TxtPassword" KeyDown="TxtPassword_KeyDown"/>
             <StackPanel Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
                 <Button Click="LoginButton_Click" Content="Log in" Margin="5"/>
                 <Button Click="RegistrationButton_Click" Content="Registration" Margin="5"/>
